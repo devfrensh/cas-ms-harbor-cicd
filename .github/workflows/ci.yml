@@ -26,9 +26,8 @@ jobs:
     uses: devfrensh/cicd-templates/.github/workflows/registryHarbor.yml@main
     secrets: inherit
     needs: sonar
-    permissions:
-      contents: read
-      packages: write
-      attestations: write
-      id-token: write
-      #
+    with:
+      image_name: app
+      registry: demo.goharbor.io
+      project: prototype-ntt
+      tag_extra: latest
