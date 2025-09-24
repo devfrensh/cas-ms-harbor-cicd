@@ -1,0 +1,17 @@
+# Gradle
+.gradle/
+build/
+node_modules
+# IDEs
+.idea/
+*.iml
+.settings/
+.classpath
+.project
+
+# Logs
+*.log
+
+# OS
+.DS_Store
+Thumbs.db

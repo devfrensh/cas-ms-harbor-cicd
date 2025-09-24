@@ -1,0 +1,34 @@
+on:
+  push:
+    branches:
+      - develop
+      - staging
+      - main
+  pull_request:
+    branches:
+      - develop
+  workflow_dispatch:
+    branches:
+      - main
+      - develop
+      - staging
+      - feature/**
+  
+jobs:
+  build:
+    uses: devfrensh/cicd-templates/.github/workflows/npm.yml@main
+    secrets: inherit
+  sonar:
+    uses: devfrensh/cicd-templates/.github/workflows/sonar.yml@main
+    secrets: inherit
+    needs: build
+  registry:
+    uses: devfrensh/cicd-templates/.github/workflows/registryHarbor.yml@main
+    secrets: inherit
+    needs: sonar
+    permissions:
+      contents: read
+      packages: write
+      attestations: write
+      id-token: write
+      #
