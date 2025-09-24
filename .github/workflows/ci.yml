@@ -13,7 +13,6 @@ on:
       - develop
       - staging
       - feature/**
-  
 jobs:
   build:
     uses: devfrensh/cicd-templates/.github/workflows/npm.yml@main
@@ -26,4 +25,3 @@ jobs:
     uses: devfrensh/cicd-templates/.github/workflows/registryHarborV2.yml@main
     secrets: inherit
     needs: sonar
-    environment: ${{ github.ref_name }}
