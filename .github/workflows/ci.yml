@@ -28,5 +28,5 @@ jobs:
   promote:
     needs: registry
     if: ${{ success() && github.ref_name == 'develop' }}
-    uses: devfrensh/cicd-templates/.github/workflows/promoteHarborAuto.yml@main
+    uses: devfrensh/cicd-templates/.github/workflows/promoteHarbor.yml@main
     secrets: inherit
