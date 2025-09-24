@@ -15,21 +15,21 @@ on:
       - feature/**
 jobs:
   build:
-    name: Build & Dependencies
+    name: Build
     uses: devfrensh/cicd-templates/.github/workflows/npm.yml@main
     secrets: inherit
   sonar:
-    name: Code Analysis (SonarQube)
+    name: Code Analysis
     uses: devfrensh/cicd-templates/.github/workflows/sonar.yml@main
     secrets: inherit
     needs: build
   registry:
-    name: Build & Push Image (Harbor)
+    name: Build & Push Image
     uses: devfrensh/cicd-templates/.github/workflows/registryHarborV2.yml@main
     secrets: inherit
     needs: sonar
   promote:
-    name: Promote Image (Crane)
+    name: Promote Image
     needs: registry
     if: ${{ success() && github.ref_name == 'develop' }}
     uses: devfrensh/cicd-templates/.github/workflows/promoteHarbor.yml@main
