@@ -25,3 +25,8 @@ jobs:
     uses: devfrensh/cicd-templates/.github/workflows/registryHarborV2.yml@main
     secrets: inherit
     needs: sonar
+  promote:
+    needs: registry
+    if: ${{ success() && github.ref_name == 'develop' }}
+    uses: devfrensh/cicd-templates/.github/workflows/promoteHarborAuto.yml@main
+    secrets: inherit
