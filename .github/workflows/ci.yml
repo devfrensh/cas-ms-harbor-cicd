@@ -22,7 +22,7 @@ jobs:
     needs: build
     secrets: inherit
   registry:
-    uses: devfrensh/cicd-templates/.github/workflows/registryHarborV3.yml@main
+    uses: devfrensh/cicd-templates/.github/workflows/registryHarborV2.yml@main
     needs: sonar
     secrets: inherit
   promote:
