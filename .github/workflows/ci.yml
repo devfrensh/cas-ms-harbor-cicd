@@ -26,4 +26,4 @@ jobs:
     uses: devfrensh/cicd-templates/.github/workflows/registryHarborV2.yml@main
     secrets: inherit
     needs: sonar
-    environment: ${{ github.ref_name }}   # activa develop / staging / main
+    environment: ${{ github.ref_name }}
