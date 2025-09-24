@@ -29,5 +29,5 @@ jobs:
     with:
       image_name: app
       registry: demo.goharbor.io
-      project: prototype-ntt
+      project: prototype-ntt-github
       tag_extra: latest
