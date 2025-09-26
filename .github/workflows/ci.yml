@@ -13,7 +13,6 @@ on:
       - develop
       - staging
       - feature/**
-      
 jobs:
   build:
     uses: devfrensh/cicd-templates/.github/workflows/npm.yml@main
